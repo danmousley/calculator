@@ -1,0 +1,84 @@
+display
+
+AC N/D +
+7 8 9 /     Each button has a string value assigned
+4 5 6 x
+1 2 3 -
+0 . <-=
+
+let previousNumber = undefined
+let currentNumber = undefined
+let operator = ""
+let result = undefined
+let string = ""
+let display = "0"
+(let subdisplay = )
+
+- Each button has a value assigned to it
+- numberbutton.forEach(button)
+- numberbutton.onclick {
+        string += event.target.value
+        display = string
+    }
+
+- operatorbutton.forEach(button)
+- operatorbutton.onclick {
+    operator = ""
+    if string {
+        if previousNumber=="undefined" {
+            previousNumber = parseFloat(string)
+            string = ""
+            display = '${previousNumber}'
+            operator = event.target.value
+            break
+        }
+        else {
+            currentNumber = parseFloat(string)
+            string = ""
+            operator = event.target.value
+            calculate()
+        }
+    } else {
+        operator = event.target.value
+        break
+    }
+}
+
+- equalsbutton.onclick {
+    calculate()
+}
+
+- calculate() {
+    currentNumber = parseFloat(string) ***check logic on this***
+    if operator == '+':
+        result = previousNumber + currentNumber
+        display = result
+        previousNumber = result
+    else if operator == '-':
+        result = previousNumber - currentNumber
+        display = result
+        previousNumber = result
+    else if operator == '/':
+        result = previousNumber / currentNumber
+        display = result
+        previousNumber = result
+    else:
+        result = previousNumber * currentNumber
+        display = result
+        previousNumber = result
+}
+
+- deleteButoon.onclick {
+    string = string.slice(0, -1)
+    display = string
+    break
+}
+
+- acButton.onclick {
+    previousNumber = undefined
+    currentNumber = undefined
+    operator = ""
+    result = 0
+    string = ""
+    display = 0
+}
