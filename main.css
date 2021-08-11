@@ -1,4 +1,10 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .container {
+  margin: 7% auto;
   display: grid;
   grid-template-areas: "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "ac mode mode plus" "seven eight nine divide" "four five six cross" "one two three minus" "naught period del equals";
   grid-gap: 2px;
@@ -8,8 +14,9 @@
   height: 70vh;
 }
 
-div {
+.grid-item {
   border: 1px solid black;
+  padding: 0;
 }
 
 #display {
@@ -90,4 +97,33 @@ div {
 
 #dot {
   grid-area: period;
+}
+
+.display {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 2%;
+}
+.display__total {
+  font-size: 300%;
+  margin: 0;
+}
+.display__calc {
+  padding-bottom: 2%;
+}
+
+.button {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  border: none;
+}
+.button--operator {
+  background-color: orange;
+}
+.button--equals {
+  background-color: green;
 }

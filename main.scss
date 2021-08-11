@@ -1,5 +1,11 @@
 
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
 .container {
+    margin: 7% auto;
     display: grid;
     grid-template-areas:
         'disp disp disp disp'
@@ -18,8 +24,9 @@
     height: 70vh;
 }
 
-div {
+.grid-item {
     border: 1px solid black;
+    padding: 0;
 }
 
 #display {grid-area: disp;}
@@ -42,3 +49,44 @@ div {
 #eight {grid-area: eight;}
 #nine {grid-area: nine;}
 #dot {grid-area: period;}
+
+.display {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items:flex-end;
+    padding: 2%;
+
+    &__total {
+        font-size: 300%;
+        margin:0;
+    }
+
+    &__calc {
+        padding-bottom: 2%;
+    }
+}
+
+.button {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    border: none;
+
+    &--operator {
+        background-color: orange;
+    }
+
+    &--equals {
+        background-color: green;
+    }
+
+    &--number {
+
+    }
+
+    &--other {
+        
+    }
+}
