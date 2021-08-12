@@ -8,77 +8,112 @@ AC N/D +
 
 let previousNumber = undefined
 let currentNumber = undefined
-let operator = ""
-let result = undefined
-let string = ""
-let display = "0"
-(let subdisplay = )
+let operator = "-"
+let result = 0.0
+let strNumber = "1.2"
+let display = "1.2"
+let subdisplay=""
 
 - Each button has a value assigned to it
 - numberbutton.forEach(button)
 - numberbutton.onclick {
-        string += event.target.value
-        display = string
+    if (operator === "" && strNumber === "") {
+        clear()
+    }
+    strNumber += event.target.value
+    if (display.charAt(0) == "0") {
+        display = strNumber
+    } else {
+        display += strNumber
+    }
+    subdisplay += event.target.value
     }
 
 - operatorbutton.forEach(button)
 - operatorbutton.onclick {
     operator = ""
-    if string {
+    if (strNumber) {
         if previousNumber=="undefined" {
             previousNumber = parseFloat(string)
-            string = ""
+            strNumber = ""
             display = '${previousNumber}'
             operator = event.target.value
+            subdisplay += operator
             break
         }
         else {
-            currentNumber = parseFloat(string)
-            string = ""
-            operator = event.target.value
+            currentNumber = parseFloat(strNumber)
+            strNumber = ""
             calculate()
+            operator = event.target.value
+            subdisplay += operator
         }
     } else {
         operator = event.target.value
-        break
     }
 }
 
 - equalsbutton.onclick {
+    if (strNumber) {
+        if (previousNumber=="undefined") {
+            previousNumber = parseFloat(strNumber)
+            strNumber = ""
+            display = '${previousNumber}'
+            break 
+        }
+        else {
+            currentNumber = parseFloat(strNumber)
+            strNumber = ""
+        }
+    }
     calculate()
 }
 
 - calculate() {
-    currentNumber = parseFloat(string) ***check logic on this***
     if operator == '+':
-        result = previousNumber + currentNumber
+        result = (previousNumber + currentNumber).toString()
         display = result
         previousNumber = result
+        currentNumber = ""
+        operator=""
     else if operator == '-':
-        result = previousNumber - currentNumber
+        result = (previousNumber - currentNumber).toString()
         display = result
         previousNumber = result
+        currentNumber = ""
+        operator=""
     else if operator == '/':
-        result = previousNumber / currentNumber
+        result = (previousNumber / currentNumber).toString()
         display = result
         previousNumber = result
+        currentNumber = ""
+        operator=""
     else:
-        result = previousNumber * currentNumber
+        result = (previousNumber * currentNumber).toString()
         display = result
         previousNumber = result
+        currentNumber = ""
+        operator=""
 }
 
-- deleteButoon.onclick {
-    string = string.slice(0, -1)
-    display = string
-    break
+- deleteButton.onclick {
+    if (string) {
+        string = string.slice(0, -1)
+        display = string
+        subdisplay = subdisplay.slice(0, -1)
+    }
 }
 
 - acButton.onclick {
+    clear()
+}
+
+let clear = () => {
     previousNumber = undefined
     currentNumber = undefined
     operator = ""
-    result = 0
+    result = 0.0
     string = ""
-    display = 0
+    display = "0"
+    subdisplay=""
 }
