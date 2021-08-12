@@ -50,6 +50,7 @@ let subdisplay=""
         }
     } else {
         operator = event.target.value
+        subdisplay += operator
     }
 }
 
