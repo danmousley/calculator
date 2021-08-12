@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kameron&display=swap');
 
-$primary-color-dark: black;
-$primary-color-light: white;
-$background-color: rgb(19, 18, 18);
-$operator-color: orange;
-$equals-color: green;
-$button-color: black;
-$text-color: white;
+$primary-color-dark: #061826;
+$primary-color-light: #F3E0EC;
+$background-color: #F3E0EC;
+$other-color: #E9C46A;
+$operator-color: #E76F51;
+$equals-color: #2A9D8F;
+$button-color: #061826;
+$text-color: #F3E0EC;
 
 $font: 'Kameron';
 
@@ -15,15 +16,15 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: $font;
-    font-weight: bold;
-    font-size: 18px;
-    color: $text-color;
-    background-color: $background-color;
+    font-size: 20px;
+    background-image: linear-gradient(to bottom right, $primary-color-dark, $primary-color-light);
     overflow: hidden;
   }
 
 .container {
     background-color: $primary-color-dark;
+    color: $text-color;
+    font-weight: bold;
     margin: 4% auto;
     display: grid;
     grid-template-areas:
@@ -39,12 +40,35 @@ body {
     grid-gap: 0px;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 25% auto auto auto auto auto auto auto auto;
-    border: 1px solid $operator-color;
     border-radius: 30px;
     padding: 0;
     width: 25vw;
     height: 85vh;
     background-clip: padding-box;
+}
+
+.light-mode {
+    background-color: $primary-color-light;
+    color: $primary-color-dark;
+    overflow: hidden;
+    background-clip: padding-box;
+
+
+    &--buttons {
+        background-color: $primary-color-light !important;
+        color: $primary-color-dark !important;
+        font-weight: bold !important;
+    }
+
+    &--day {
+        background-color: $equals-color !important;
+        color: $primary-color-dark !important;
+    }
+
+    &--night {
+        background-color: $primary-color-light !important;
+        color: $primary-color-dark !important;
+    }
 }
 
 .grid-item {
@@ -107,7 +131,7 @@ body {
     font-family: $font;
     font-size: 1em;
     font-weight: bold;
-    background-color: $background-color;
+    background-color: $button-color;
 
     &--operator {
         background-color: $operator-color;
@@ -121,14 +145,19 @@ body {
         border-radius: 0%;
         border-top-left-radius: 40%;
         border-bottom-left-radius: 40%;
-        width: 40%;
+        width: 30%;
+        height: 60%;
+        background-color: $equals-color;
+        border: 1px solid $equals-color;
     }
 
     &--day-mode {
         border-radius: 0%;
         border-top-right-radius: 40%;
         border-bottom-right-radius: 40%;
-        width: 40%;
+        width: 30%;
+        height: 60%;
+        border: 1px solid $equals-color;
     }
 
     &--number {
@@ -136,6 +165,6 @@ body {
     }
 
     &--other {
-        
+        color: $other-color;
     }
 }

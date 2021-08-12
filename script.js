@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     previousNumber = parseFloat(strNumber)
                     strNumber = ""
                     display = `${previousNumber}`
-                    operator = event.target.value
+                    operator = button.value
                     subdisplay += operator
                 }
                 //any subsequent numbers enetered
@@ -114,12 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     strNumber = ""
                     check()
                     calculate()
-                    operator = event.target.value
+                    operator = button.value
                     subdisplay += operator
                 }
             // if equals has just been pressed
             } else {
-                operator = event.target.value
+                operator = button.value
                 subdisplay += operator
             }
             check()
@@ -170,5 +170,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 
+    // night/day mode toggle
+    let day = document.querySelector(".button--day-mode")
+    day.addEventListener("click", (event) => {
+        var container = document.querySelector(".container")
+        let buttons = document.querySelectorAll(".button--number")
+        let buttonsOther = document.querySelectorAll(".button--other")
+        var night = document.querySelector("#night")
+        var day = document.querySelector("#day")
+
+        container.classList.add("light-mode")
+        day.classList.add("light-mode--day")
+        night.classList.add("light-mode--night")
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.add("light-mode--buttons")
+        }
+        for (let i = 0; i < buttons.length; i++) {
+            buttonsOther[i].classList.add("light-mode--buttons")
+        }
+        console.log(event);
+    })
+
+    let night = document.querySelector(".button--night-mode")
+    night.addEventListener("click", (event) => {
+        var container = document.querySelector(".container")
+        let buttons = document.querySelectorAll(".button--number")
+        let buttonsOther = document.querySelectorAll(".button--other")
+        var night = document.querySelector("#night")
+        var day = document.querySelector("#day")
+
+        container.classList.remove("light-mode")
+        day.classList.remove("light-mode--day")
+        night.classList.remove("light-mode--night")
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("light-mode--buttons")
+        }
+        for (let i = 0; i < buttons.length; i++) {
+            buttonsOther[i].classList.remove("light-mode--buttons")
+        }
+        console.log(event);
+    })
 })
 

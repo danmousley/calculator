@@ -3,27 +3,46 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Kameron";
-  font-weight: bold;
-  font-size: 18px;
-  color: white;
-  background-color: #131212;
+  font-size: 20px;
+  background-image: linear-gradient(to bottom right, #061826, #F3E0EC);
   overflow: hidden;
 }
 
 .container {
-  background-color: black;
+  background-color: #061826;
+  color: #F3E0EC;
+  font-weight: bold;
   margin: 4% auto;
   display: grid;
   grid-template-areas: "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "ac mode mode plus" "seven eight nine divide" "four five six cross" "one two three minus" "naught period del equals";
   grid-gap: 0px;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% auto auto auto auto auto auto auto auto;
-  border: 1px solid orange;
   border-radius: 30px;
   padding: 0;
   width: 25vw;
   height: 85vh;
   background-clip: padding-box;
+}
+
+.light-mode {
+  background-color: #F3E0EC;
+  color: #061826;
+  overflow: hidden;
+  background-clip: padding-box;
+}
+.light-mode--buttons {
+  background-color: #F3E0EC !important;
+  color: #061826 !important;
+  font-weight: bold !important;
+}
+.light-mode--day {
+  background-color: #2A9D8F !important;
+  color: #061826 !important;
+}
+.light-mode--night {
+  background-color: #F3E0EC !important;
+  color: #061826 !important;
 }
 
 .grid-item {
@@ -129,7 +148,7 @@ body {
   font-size: 1em;
   padding-bottom: 2%;
   padding-right: 1%;
-  color: green;
+  color: #2A9D8F;
 }
 
 .button {
@@ -139,27 +158,35 @@ body {
   margin: 0;
   text-align: center;
   border: none;
-  color: white;
+  color: #F3E0EC;
   font-family: "Kameron";
   font-size: 1em;
   font-weight: bold;
-  background-color: #131212;
+  background-color: #061826;
 }
 .button--operator {
-  background-color: orange;
+  background-color: #E76F51;
 }
 .button--equals {
-  background-color: green;
+  background-color: #2A9D8F;
 }
 .button--night-mode {
   border-radius: 0%;
   border-top-left-radius: 40%;
   border-bottom-left-radius: 40%;
-  width: 40%;
+  width: 30%;
+  height: 60%;
+  background-color: #2A9D8F;
+  border: 1px solid #2A9D8F;
 }
 .button--day-mode {
   border-radius: 0%;
   border-top-right-radius: 40%;
   border-bottom-right-radius: 40%;
-  width: 40%;
+  width: 30%;
+  height: 60%;
+  border: 1px solid #2A9D8F;
+}
+.button--other {
+  color: #E9C46A;
 }

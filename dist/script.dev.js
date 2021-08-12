@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
           previousNumber = parseFloat(strNumber);
           strNumber = "";
           display = "".concat(previousNumber);
-          operator = event.target.value;
+          operator = button.value;
           subdisplay += operator;
         } //any subsequent numbers enetered
         else {
@@ -109,12 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
             strNumber = "";
             check();
             calculate();
-            operator = event.target.value;
+            operator = button.value;
             subdisplay += operator;
           } // if equals has just been pressed
 
       } else {
-        operator = event.target.value;
+        operator = button.value;
         subdisplay += operator;
       }
 
@@ -163,5 +163,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
       updateScreen();
     }
+  }); // night/day mode toggle
+
+  var day = document.querySelector(".button--day-mode");
+  day.addEventListener("click", function (event) {
+    var container = document.querySelector(".container");
+    var buttons = document.querySelectorAll(".button--number");
+    var buttonsOther = document.querySelectorAll(".button--other");
+    var night = document.querySelector("#night");
+    var day = document.querySelector("#day");
+    container.classList.add("light-mode");
+    day.classList.add("light-mode--day");
+    night.classList.add("light-mode--night");
+
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.add("light-mode--buttons");
+    }
+
+    for (var _i = 0; _i < buttons.length; _i++) {
+      buttonsOther[_i].classList.add("light-mode--buttons");
+    }
+
+    console.log(event);
+  });
+  var night = document.querySelector(".button--night-mode");
+  night.addEventListener("click", function (event) {
+    var container = document.querySelector(".container");
+    var buttons = document.querySelectorAll(".button--number");
+    var buttonsOther = document.querySelectorAll(".button--other");
+    var night = document.querySelector("#night");
+    var day = document.querySelector("#day");
+    container.classList.remove("light-mode");
+    day.classList.remove("light-mode--day");
+    night.classList.remove("light-mode--night");
+
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("light-mode--buttons");
+    }
+
+    for (var _i2 = 0; _i2 < buttons.length; _i2++) {
+      buttonsOther[_i2].classList.remove("light-mode--buttons");
+    }
+
+    console.log(event);
   });
 });
