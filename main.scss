@@ -1,11 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Kameron&display=swap');
 
-* {
+$primary-color-dark: black;
+$primary-color-light: white;
+$background-color: rgb(19, 18, 18);
+$operator-color: orange;
+$equals-color: green;
+$button-color: black;
+$text-color: white;
+
+$font: 'Kameron';
+
+
+body {
     margin: 0;
     box-sizing: border-box;
+    font-family: $font;
+    font-weight: bold;
+    font-size: 18px;
+    color: $text-color;
+    background-color: $background-color;
+    overflow: hidden;
   }
 
 .container {
-    margin: 7% auto;
+    background-color: $primary-color-dark;
+    margin: 4% auto;
     display: grid;
     grid-template-areas:
         'disp disp disp disp'
@@ -17,16 +36,22 @@
         'four five six cross'
         'one two three minus'
         'naught period del equals';
-    grid-gap: 2px;
-    border: 2px solid black;
+    grid-gap: 0px;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% auto auto auto auto auto auto auto auto;
+    border: 1px solid $operator-color;
+    border-radius: 30px;
     padding: 0;
-    width: 50vw;
-    height: 70vh;
+    width: 25vw;
+    height: 85vh;
+    background-clip: padding-box;
 }
 
 .grid-item {
-    border: 1px solid black;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #display {grid-area: disp;}
@@ -56,30 +81,54 @@
     justify-content: flex-start;
     align-items:flex-end;
     padding: 2%;
+    padding-right: 4%;
 
     &__total {
-        font-size: 300%;
+        font-size: 3em;
         margin:0;
     }
 
     &__calc {
+        font-size: 1em;
         padding-bottom: 2%;
+        padding-right: 1%;
+        color: $equals-color;
     }
 }
 
 .button {
-    height: 100%;
-    width: 100%;
+    height: 70%;
+    width: 70%;
+    border-radius: 100%;
     margin: 0;
     text-align: center;
     border: none;
+    color: $text-color;
+    font-family: $font;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: $background-color;
 
     &--operator {
-        background-color: orange;
+        background-color: $operator-color;
     }
 
     &--equals {
-        background-color: green;
+        background-color: $equals-color;
+    }
+
+    &--night-mode {
+        border-radius: 0%;
+        border-top-left-radius: 40%;
+        border-bottom-left-radius: 40%;
+        width: 40%;
+    }
+
+    &--day-mode {
+        border-radius: 0%;
+        border-top-right-radius: 40%;
+        border-bottom-right-radius: 40%;
+        width: 40%;
     }
 
     &--number {
