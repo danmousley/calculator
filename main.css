@@ -25,6 +25,30 @@ body {
   background-clip: padding-box;
 }
 
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 30vw;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 35vw;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .container {
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+    font-size: 20px;
+    margin: 0;
+    border-radius: 0;
+  }
+}
 .light-mode {
   background-color: #F3E0EC;
   color: #061826;
@@ -143,12 +167,22 @@ body {
 .display__total {
   font-size: 3em;
   margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  direction: rtl;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .display__calc {
   font-size: 1em;
   padding-bottom: 2%;
   padding-right: 1%;
   color: #2A9D8F;
+  max-width: 100%;
+  overflow: hidden;
+  direction: rtl;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .button {

@@ -106,7 +106,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     strNumber = ""
                     display = `${previousNumber}`
                     operator = button.value
-                    subdisplay += operator
+                    switch (button.value) {
+                        case "+":
+                            subdisplay += "+"
+                            break
+                        case "-":
+                            subdisplay += "-"
+                            break
+                        case "/":
+                            subdisplay += "÷"
+                            break
+                        case "*":
+                            subdisplay += "×"
+                            break
+                    }
                 }
                 //any subsequent numbers enetered
                 else {
@@ -115,12 +128,38 @@ document.addEventListener('DOMContentLoaded', function() {
                     check()
                     calculate()
                     operator = button.value
-                    subdisplay += operator
+                    switch (button.value) {
+                        case "+":
+                            subdisplay += "+"
+                            break
+                        case "-":
+                            subdisplay += "-"
+                            break
+                        case "/":
+                            subdisplay += "÷"
+                            break
+                        case "*":
+                            subdisplay += "×"
+                            break
+                    }
                 }
             // if equals has just been pressed
             } else {
                 operator = button.value
-                subdisplay += operator
+                switch (button.value) {
+                    case "+":
+                        subdisplay += "+"
+                        break
+                    case "-":
+                        subdisplay += "-"
+                        break
+                    case "/":
+                        subdisplay += "÷"
+                        break
+                    case "*":
+                        subdisplay += "×"
+                        break
+                }
             }
             check()
             updateScreen()
