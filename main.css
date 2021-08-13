@@ -181,7 +181,6 @@ body {
   color: #2A9D8F;
   max-width: 100%;
   overflow: hidden;
-  direction: rtl;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
