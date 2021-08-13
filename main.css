@@ -57,6 +57,7 @@ body {
 }
 .light-mode--buttons {
   background-color: #F3E0EC !important;
+  border-color: #F3E0EC !important;
   color: #061826 !important;
   font-weight: bold !important;
 }
@@ -191,7 +192,7 @@ body {
   border-radius: 100%;
   margin: 0;
   text-align: center;
-  border: none;
+  border: 0.5px solid #061826;
   color: #F3E0EC;
   font-family: "Kameron";
   font-size: 1em;
@@ -200,9 +201,11 @@ body {
 }
 .button--operator {
   background-color: #E76F51;
+  border-color: #E76F51;
 }
 .button--equals {
   background-color: #2A9D8F;
+  border-color: #2A9D8F;
 }
 .button--night-mode {
   border-radius: 0%;
@@ -223,4 +226,13 @@ body {
 }
 .button--other {
   color: #E9C46A;
+}
+
+.button:hover {
+  cursor: pointer;
+  border: 0.5px solid #81808C !important;
+}
+
+.button:active {
+  background-color: #81808C !important;
 }

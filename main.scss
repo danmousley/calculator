@@ -8,6 +8,7 @@ $operator-color: #E76F51;
 $equals-color: #2A9D8F;
 $button-color: #061826;
 $text-color: #F3E0EC;
+$highlight-color: #81808C;
 
 $font: 'Kameron';
 
@@ -84,6 +85,7 @@ body {
 
     &--buttons {
         background-color: $primary-color-light !important;
+        border-color: $primary-color-light !important;
         color: $primary-color-dark !important;
         font-weight: bold !important;
     }
@@ -164,7 +166,7 @@ body {
     border-radius: 100%;
     margin: 0;
     text-align: center;
-    border: none;
+    border: 0.5px solid $primary-color-dark;
     color: $text-color;
     font-family: $font;
     font-size: 1em;
@@ -173,10 +175,12 @@ body {
 
     &--operator {
         background-color: $operator-color;
+        border-color: $operator-color;
     }
 
     &--equals {
         background-color: $equals-color;
+        border-color: $equals-color;
     }
 
     &--night-mode {
@@ -205,4 +209,13 @@ body {
     &--other {
         color: $other-color;
     }
+}
+
+.button:hover {
+    cursor: pointer;
+    border: 0.5px solid $highlight-color !important;
+}
+
+.button:active {
+    background-color: $highlight-color !important;
 }
