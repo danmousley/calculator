@@ -8,68 +8,6 @@ body {
   overflow: hidden;
 }
 
-.container {
-  background-color: #061826;
-  color: #F3E0EC;
-  font-weight: bold;
-  margin: 4% auto;
-  display: grid;
-  grid-template-areas: "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "ac mode mode plus" "seven eight nine divide" "four five six cross" "one two three minus" "naught period del equals";
-  grid-gap: 0px;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 25% auto auto auto auto auto auto auto auto;
-  border-radius: 30px;
-  padding: 0;
-  width: 25vw;
-  height: 85vh;
-  background-clip: padding-box;
-}
-
-@media only screen and (max-width: 1200px) {
-  .container {
-    width: 30vw;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .container {
-    width: 35vw;
-  }
-}
-@media only screen and (max-width: 850px) {
-  .container {
-    width: 40vw;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .container {
-    height: 100vh;
-    width: 100vw;
-    font-size: 20px;
-    margin: 0;
-    border-radius: 0;
-  }
-}
-.light-mode {
-  background-color: #F3E0EC;
-  color: #061826;
-  overflow: hidden;
-  background-clip: padding-box;
-}
-.light-mode--buttons {
-  background-color: #F3E0EC !important;
-  border-color: #F3E0EC !important;
-  color: #061826 !important;
-  font-weight: bold !important;
-}
-.light-mode--day {
-  background-color: #2A9D8F !important;
-  color: #061826 !important;
-}
-.light-mode--night {
-  background-color: #F3E0EC !important;
-  color: #061826 !important;
-}
-
 .grid-item {
   padding: 0;
   display: flex;
@@ -234,4 +172,66 @@ body {
 
 .button:active {
   background-color: #81808C !important;
+}
+
+.container {
+  background-color: #061826;
+  color: #F3E0EC;
+  font-weight: bold;
+  margin: 4% auto;
+  display: grid;
+  grid-template-areas: "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "disp disp disp disp" "ac mode mode plus" "seven eight nine divide" "four five six cross" "one two three minus" "naught period del equals";
+  grid-gap: 0px;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% auto auto auto auto auto auto auto auto;
+  border-radius: 30px;
+  padding: 0;
+  width: 25vw;
+  height: 85vh;
+  background-clip: padding-box;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 30vw;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 35vw;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .container {
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+    font-size: 20px;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+.light-mode {
+  background-color: #F3E0EC;
+  color: #061826;
+  overflow: hidden;
+  background-clip: padding-box;
+}
+.light-mode--buttons {
+  background-color: #F3E0EC !important;
+  border-color: #F3E0EC !important;
+  color: #061826 !important;
+  font-weight: bold !important;
+}
+.light-mode--day {
+  background-color: #2A9D8F !important;
+  color: #061826 !important;
+}
+.light-mode--night {
+  background-color: #F3E0EC !important;
+  color: #061826 !important;
 }

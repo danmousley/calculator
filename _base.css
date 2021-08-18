@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Kameron&display=swap");
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kameron";
+  font-size: 20px;
+  background-image: linear-gradient(to bottom right, #061826, #F3E0EC);
+  overflow: hidden;
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Kameron&display=swap');
+
+$primary-color-dark: #061826;
+$primary-color-light: #F3E0EC;
+$background-color: #F3E0EC;
+$other-color: #E9C46A;
+$operator-color: #E76F51;
+$equals-color: #2A9D8F;
+$button-color: #061826;
+$text-color: #F3E0EC;
+$highlight-color: #81808C;
+
+$font: 'Kameron';
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font;
+    font-size: 20px;
+    background-image: linear-gradient(to bottom right, $primary-color-dark, $primary-color-light);
+    overflow: hidden;
+  }
